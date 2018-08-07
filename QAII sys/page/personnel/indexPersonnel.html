@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon" href="../../image/icon.ico" media="screen" />
+<link rel="stylesheet" href="../../commen/bootstrap/bootstrap.min.css" />
+<link rel="stylesheet" href="../../css/style.css" />
+
+<script src="../../js/jquery-3.3.1.min.js"></script> 
+<script src="../../commen/bootstrap/bootstrap.min.js"> </script>
+<script src="../../js/echarts.min.js"></script>
+<title>科技管理系统</title>
+</head>
+
+<body>
+	<div class="container-fluid personalbody">
+		<div class="content">
+			<div class="perhead">
+				<div class="pertitle">
+					<span class="pertitlespan">人事教育处监测平台</span>
+					<div class="right perNav">
+						<a href="addPersonnel.html"><div class="pageTo">进入系统</div></a>
+						<a href="../indexNav.html"><div class="pageTo">返回导航</div></a>
+						<a href="../login.html"><div class="pageTo">退出</div></a>
+					</div>
+				</div>	
+				
+			</div>
+			<div class="row">
+			<div class="perbox col-3">
+				<div class="inform">
+					<div class="perctitle"><span>合同到期提醒</span><span class="right more">查看更多+</span></div>
+					<div class="perinform">
+						<ul>
+							<li class="permain activ">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(50,146,172,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(37,114,160,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(30,82,134,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(26,76,108,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(7,88,134,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+
+						</ul>
+					</div>
+				</div>
+				<div class="inform">
+					<div class="perctitle"><span>试用期到期提醒</span><span class="right more">查看更多+</span></div>
+					<div class="perinform">
+						<ul>
+							<li class="permain activ">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(50,146,172,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(37,114,160,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(30,82,134,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+							<li class="permain" style="background:rgba(26,76,108,0.6);">
+								<div class="row">
+									<div class="col-3">科技处</div>
+									<div class="col-3">张三</div>
+									<div class="col-6">2018年8月20日</div>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="perbox2 col-6">
+				<div class="inform">
+					<div class="perctitle"><span>本月人数增减情况</span></div>
+					<div id="main" style="width: 100%;height:400px;"></div>
+				</div>
+				<div class="inform">
+					<div class="perctitle"><span>人才队伍</span></div>
+					<div id="mainbar" style="width: 100%;height:278px;"></div>
+				</div>
+				
+			</div>
+			<div class="perbox col-3">
+				<div class="inform gradient">
+					<div class="perctitle"><span>各部门人数所占比例</span></div>
+					<div id="maincircle" style="width: 100%;height:367px;"></div>
+				</div>
+				<div class="inform">
+					<div class="perctitle"><span>高端人才</span></div>
+					<div style="height: 312px;" id="canvasBox">
+						<canvas id="talents"  width="445px" height="230px"></canvas>
+						<script src="../../js/talent.js"></script>
+					</div>
+					
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+<script src="../../js/perchars.js"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>科技管理系统</title>
+<link rel="stylesheet" href="../css/style.css" />
+
+<script src="../js/QRcode.js"></script>
+</head>
+
+<body>
+<img class="loginbg" src="../image/loginbg.jpg" />
+	<div class="loginBox">
+		<div class="label"><img src="../image/account.png" class="labelimg" /></div>
+		<input name="admin" placeholder="请输入您的账号" class="admin" type="text" />
+		<div class="label"><img src="../image/password.png" class="labelimg" /></div>
+		<input name="password" placeholder="密码6-18位" class="admin" type="password" />
+		<div class="label2"><img src="../image/code.png" class="labelimg" /></div>
+		<input name="authcode" placeholder="请输入验证码" class="admincode" type="text" id = "input" value="" />
+        <input type = "button" id="code" onclick="createCode()" value="点击显示"/> <span class="change" onclick="createCode()">换一张</span>
+		<input type="button" value="登录" class="btnlog" onclick = "validate()" />
+		
+	</div>
+</body>
+</html>
