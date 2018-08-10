@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>权限管理</title>
+  <link rel="stylesheet" href="../commen/layui/css/layui.css" media="all">
+  <link rel="stylesheet" href="../css/layuiAdd.css">
+  <style>
+    body{margin: 10px;}
+    .demo-carousel{height: 200px; line-height: 200px; text-align: center;}
+  </style>
+</head>
+<body>
+<div class="tool">
+	<div class="layui-btn-group demoTable">
+  	  <span class="limit">权限管理（165）</span>
+		<button class="layui-btn btn" data-method="offset" data-type="getCheckData" style="margin-left:40px !important;margin-right:16px !important">
+			<i class="layui-icon layui-icon-add-1"></i>添加
+		</button>
+		  <button class="layui-btn btn" data-type="getCheckLength">
+			<i class="layui-icon layui-icon-delete"></i>删除
+		  </button>
+	</div>
+</div>
+
+<!-- 数据展示主表格-->
+<table class="layui-table" id="test" lay-filter="demo" style="width: 100% !important;"></table>
+<script type="text/html" id="barDemo">
+  
+  <a class="layui-btn layui-btn-xs" lay-event="edit">角色修改</a>
+  <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<!-- 数据展示主表格-->
+ 
+
+<script src="../commen/layui/layui.js"></script>
+<script>
+layui.config({
+  version: '1531663423583' //为了更新 js 缓存，可忽略
+});
+
+ 
+layui.use(['laydate', 'laypage', 'layer', 'table'], function(){
+  var table = layui.table,//表格
+	layer = layui.layer; 
+	
+	 //监听表格复选框选择
+  table.on('checkbox(demo)', function(obj){
+    console.log(obj)
+  });
+  
+  //执行一个 table 实例
+  table.render({
+    elem: '#test',
+    height: 332,
+//    ,url: '/demo/table/user/' //数据接口
+	cellMinWidth: 80, //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    page: true, //开启分页
+    cols: [[ //标题栏
+	  {type:'checkbox'},
+      {field: 'id', title: '序号'},
+      {field: 'username', title: '用户名'},
+      {field: 'pas', title: '密码'},
+      {field: 'rid', title: '角色'},
+      {field: 'sex', title: '操作',toolbar: '#barDemo'}
+    ]],
+	  //表格数据
+    data: [{
+      "id": "10001",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"人事处权限",
+	  "sex":"点击"
+    }, {
+     "id": "10002",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"院级权限",
+	  "sex":"点击"
+    }, {
+      "id": "10003",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"科技处权限",
+	  "sex":"点击"
+    }, {
+      "id": "10004",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"产业化处权限",
+	  "sex":"点击"
+    }, {
+      "id": "10005",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    }, {
+      "id": "10006",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    },{
+      "id": "10007",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    },{
+      "id": "10008",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    },{
+      "id": "10009",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    },{
+      "id": "10010",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    },{
+      "id": "10011",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    },{
+      "id": "10012",
+      "username": "杜甫",
+      "pas":"123456",
+	  "rid":"123456",
+	  "sex":"点击"
+    }]
+  });
+  
+  //监听工具条
+  table.on('tool(demo)', function(obj){ //注：tool是工具条事件名，test是table原始容器的属性 lay-filter="对应的值"
+    var data = obj.data //获得当前行数据
+    ,layEvent = obj.event; //获得 lay-event 对应的值
+    if(layEvent === 'detail'){
+      layer.msg('用户名：'+JSON.stringify(data.username)+'<br>密码：'+JSON.stringify(data.pas)+'<br>角色：'+JSON.stringify(data.rid));
+    } else if(layEvent === 'del'){
+      layer.confirm('确定删除信息', function(index){
+        obj.del(); //删除对应行（tr）的DOM结构
+        layer.close(index);
+        //向服务端发送删除指令
+      });
+    } else if(layEvent === 'edit'){
+      layer.alert(
+		  '<div class="layui-form-item">'+
+			'<label class="layui-form-label">角色</label>'+
+			'<div class="layui-input-block">'+
+				'<select name="interest" lay-filter="aihao">'+
+					'<option value=""></option>'+
+					'<option value="0">超级管理员</option>'+
+					'<option value="1" selected="">院级权限</option>'+
+					'<option value="2">人事部门权限</option>'+
+					'<option value="3">产业化处权限</option>'+
+					'<option value="4">科技管理处</option>'+
+				'</select>'+
+			'</div>'+
+		'</div>')
+    }
+  });
+
+	//监听顶部添加删除操作
+	
+	var $ = layui.$, active = {
+    getCheckData: function(){ //添加数据按钮表单
+		layui.use('layer', function(){
+			var layer = layui.layer;
+			layer.open({
+				type: 2, 
+				content: 'limited-add.html' //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+			}); 
+		});    
+    }
+    ,getCheckLength: function(){ //选中批量删除
+      var checkStatus = table.checkStatus('test'),
+      data = checkStatus.data;
+		if(data.length==0){
+			layer.msg("未选中数据！");
+		}else{
+			layer.confirm('确定删除'+ data.length + ' 条数据'+JSON.stringify(data), function(index){
+				obj.del(); //删除对应行（tr）的DOM结构
+				layer.close(index);
+				//向服务端发送删除指令
+			});
+		}
+    }
+  };
+  
+  $('.demoTable .layui-btn').on('click', function(){
+    var type = $(this).data('type');
+    active[type] ? active[type].call(this) : '';
+  });
+	
+	
+
+  
+});
+</script>
+</body>
+</html>        
+        

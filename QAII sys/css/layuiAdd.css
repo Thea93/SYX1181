@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,li,ul,div{
+	margin:0px auto;
+	padding: 0px;
+}
+body{
+	margin:0px auto !important;
+	padding:0px;
+}
+table th{
+	height:72px;
+	linge-height:72px;
+	background: #eff2f6;
+	font-size: 20px !important;
+	color: #333;
+}
+.tool{
+	padding-left:45px;
+	background:#1b2032;
+	height: 70px;
+	line-height: 70px;
+}
+.tool .limit{
+	font-size:20px;
+	color: #fff;
+	vertical-align: middle;
+}
+.btn{
+	border-radius: 3px !important;
+	height:37px;
+	line-height: 37px;
+	width:84px;
+	background: #fff;
+	color:#1b2032;
+	vertical-align: middle;
+}
+.btn:hover{
+	background:#036eb8;
+}
+.layui-table-body{
+	height:auto !important;
+}
+.layui-form{
+	height:auto !important;
+}
+/*添加弹性样式*/
+.layui-layer-hui {
+    min-width: 100px;
+    background-color: #000;
+    filter: alpha(opacity=60);
+    background-color: rgba(0,0,0,.6);
+    color: #fff;
+    border: none;
+}
+.layui-layer-msg {
+    min-width: 180px;
+    border: 1px solid #D3D4D3;
+    box-shadow: none;
+}
+.layui-layer-dialog {
+    min-width: 260px;
+}
+.layui-layer-border {
+    border: 1px solid #B2B2B2;
+    border: 1px solid rgba(0,0,0,.1);
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+}
+.layui-layer {
+    -webkit-overflow-scrolling: touch;
+    top: 150px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    -webkit-background-clip: content;
+    border-radius: 2px;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+}
+.layui-layer, .layui-layer-shade {
+    position: fixed;
+    _position: absolute;
+    pointer-events: auto;
+}
+.layui-layer-title{
+	padding: 10px 15px;
+	font-size: 16px;
+	color: #fff;
+	background: #036eb8;
+	border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.layui-layer-content{
+	padding:10px;
+	color: #444;
+}
+/*删除按钮*/
+.layui-layer-btn {
+    text-align: right;
+    padding: 0 15px 12px;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.layui-layer-btn .layui-layer-btn0 {
+    border-color: #1E9FFF;
+    background-color: #1E9FFF;
+    color: #fff;
+}
+.layui-layer-btn a {
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 5px 0;
+    padding: 0 15px;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    color: #333;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+}
+.layui-layer-btn a {
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 5px 0;
+    padding: 0 15px;
+    border: 1px solid #dedede;
+    background-color: #fff;
+    color: #333;
+    border-radius: 2px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+}
+.layui-layer-btn a, .layui-layer-dialog .layui-layer-ico, .layui-layer-setwin a {
+    display: inline-block;
+    vertical-align: top;
+}
+table{
+	width: 100% !important;
+}

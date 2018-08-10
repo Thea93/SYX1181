@@ -184,7 +184,7 @@ ul,li{
 .personalbody{
 	width: 100%;
 	min-width: 1200px;
-	height: 100vh;
+/*	height: 100vh;*/
 	background: #011039;
 	background-image:url(../image/personbg.jpg);
 	background-size:100%;
