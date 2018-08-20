@@ -151,20 +151,42 @@ layui.use(['laydate', 'laypage', 'layer', 'table'], function(){
       layer.confirm('确定删除信息', function(index){
         obj.del(); //删除对应行（tr）的DOM结构
         layer.close(index);
+		  console.log(JSON.stringify(data.id));
         //向服务端发送删除指令
+		$.ajax({  
+			type : 'POST',  
+			url: path + '/check/testPost',
+			contentType: "application/x-www-form-urlencoded",
+			data: {"array": array},
+			success : function(data) {  
+			}  
+		});
       });
     } else if(layEvent === 'edit'){
+		var str='';
+		var rid=JSON.stringify(data.rid);
+		if(rid.indexOf("人事处权限")>-1){
+			str='<option value=""></option>'+
+					'<option value="0">超级管理员</option>'+
+					'<option value="1" >院级权限</option>'+
+					'<option value="2" selected="">人事部门权限</option>'+
+					'<option value="3">产业化处权限</option>'+
+					'<option value="4">科技管理处</option>';
+		}else if(rid.indexOf("院级权限")>-1){
+			str='<option value=""></option>'+
+					'<option value="0">超级管理员</option>'+
+					'<option value="1"  selected="">院级权限</option>'+
+					'<option value="2">人事部门权限</option>'+
+					'<option value="3">产业化处权限</option>'+
+					'<option value="4">科技管理处</option>';
+		}
+		
       layer.alert(
 		  '<div class="layui-form-item">'+
 			'<label class="layui-form-label">角色</label>'+
 			'<div class="layui-input-block">'+
 				'<select name="interest" lay-filter="aihao">'+
-					'<option value=""></option>'+
-					'<option value="0">超级管理员</option>'+
-					'<option value="1" selected="">院级权限</option>'+
-					'<option value="2">人事部门权限</option>'+
-					'<option value="3">产业化处权限</option>'+
-					'<option value="4">科技管理处</option>'+
+					str+
 				'</select>'+
 			'</div>'+
 		'</div>')

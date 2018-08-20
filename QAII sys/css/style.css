@@ -296,7 +296,7 @@ ul,li{
 }
 .table2excel{
 	overflow: auto;
-	max-width: 90%;
+/*	max-width: 90%;*/
 }
 #testTable{
 	min-width: 100%;
